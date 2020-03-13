@@ -18,6 +18,7 @@ val logbackVersion = "1.2.3"
 val typeSafeConfVersion = "1.3.4"
 val scalaLoggingVersion = "3.9.0"
 val scalatestVersion = "3.0.5"
+val mongodbVersion = "2.8.0"
 
 libraryDependencies ++= Seq(
   //Akka http dependencies
@@ -31,6 +32,9 @@ libraryDependencies ++= Seq(
 
   //Typesafe conf
   "com.typesafe" % "config" % typeSafeConfVersion,
+
+  //Mongodb
+  "org.mongodb.scala" %% "mongo-scala-driver" % mongodbVersion,
 
   //Joda wrapper
   "com.github.nscala-time" %% "nscala-time" % nscalaTimeVersion,
