@@ -12,9 +12,9 @@ object WebServer extends LazyLogging with RestRoutes {
     implicit val materializer = ActorSystemUtils.materializer
     implicit val executionContext = system.dispatcher
 
-    val plannerRoutes = routes
+    val restRoutes = routes
 
-    val binding = Http().bindAndHandle(plannerRoutes, "localhost")
+    val binding = Http().bindAndHandle(restRoutes, "localhost")
     logger.info(s"Server online at http://localhost:16000/")
   }
 
