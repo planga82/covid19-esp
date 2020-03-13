@@ -1,0 +1,8 @@
+To generate docker use:
+sbt docker:publishLocal
+
+And then launch it with:
+docker run --rm --net=host rest_microservice:0.1
+
+It will be listen on http://localhost:16000 (to change PORT use WEB_PORT env)
+
