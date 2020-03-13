@@ -2,6 +2,8 @@ package es.covid19esp.rest_microservice.model
 
 import java.util.Date
 
+import org.mongodb.scala.bson.ObjectId
+
 sealed trait Grade { def key: String}
 
 case object None extends Grade { def key = "N"}
@@ -11,12 +13,12 @@ case object High extends Grade { def key = "H"}
 
 
 case class User(
-               id: String,
-               lat: Double,
-               lon: Double,
-               lastStatuses: Seq[Status],
-               recovered: Boolean,
-               confirmed: Boolean,
+                 _id: ObjectId,
+                 lat: Double,
+                 lon: Double,
+                 lastStatuses: Seq[Status],
+                 recovered: Boolean,
+                 confirmed: Boolean,
                )
 
 case class Status(
@@ -28,5 +30,5 @@ case class Report(
                     fever: Grade,
                     cough: Grade,
                     snot: Grade,
-                    yourOpinion: Option[Boolean]
+                    yourOpinion: Boolean
                     )
